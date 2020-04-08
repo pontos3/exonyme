@@ -1,0 +1,143 @@
+{
+    "countries": [
+        {
+            "shortCountryName": "Afghanistan",
+            "longCountryName": "la République islamique d’Afghanistan",
+            "inhabitant": "Afghan, -e",
+            "capital": {
+                "name": "Kaboul",
+                "lat": "34.5281300",
+                "lon": "69.1723300"
+                
+            },
+            "diplomatic-or-consular-headquarters": [{
+                    "name": "Kaboul",
+                    "lat": "34.5281300",
+                    "lon": "69.1723300"
+                    
+                }
+            ]
+        }, 
+        {
+            "shortCountryName": "Afrique du Sud",
+            "longCountryName": "la République d’Afrique du Sud",
+            "inhabitant": "Sudafricain, -e ou Sud-Africain, -e",
+            "capital": {
+                "name": "Prétoria",
+                "lat": "-25.7448600",
+                "lon": "28.1878300"
+            },
+            "diplomatic-or-consular-headquarters": [
+                {
+                    "name": "Prétoria",
+                    "lat": "-25.7448600",
+                    "lon": "28.1878300"
+                },
+                {
+                    "name": "Le Cap",
+                    "lat": "",
+                    "lon": ""
+                },
+                {
+                    "name": "Johannesbourg",
+                    "lat": "",
+                    "lon": ""
+                }
+            ],
+            "observation": "1. On trouve aussi les variantes « la République sud-africaine » (ONU) et « Pretoria ». 2. Prétoria est le siège du gouvernement ; Le Cap est le siège du parlement."
+        },
+        {
+            "shortCountryName": "Albanie",
+            "longCountryName": "la République d’Albanie",
+            "inhabitant": "Albanais, -e",
+            "capital": {
+                "name": "Tirana",
+                "lat": "41.3275000",
+                "lon": "19.8188900"
+            },
+            "diplomatic-or-consular-headquarters": [{
+                "name": "Tirana",
+                "lat": "41.3275000",
+                "lon": "19.8188900"
+            }],
+            "observation": ""
+        }, 
+        {
+            "shortCountryName": "Algérie",
+            "longCountryName": "la République algérienne démocratique et populaire",
+            "inhabitant": "Algérien, -ienne",
+            "capital": {
+                "name": "Alger",
+                "lat": "36.7525000",
+                "lon": "3.0419700"
+            },
+            "diplomatic-or-consular-headquarters": [
+                {
+                    "name": "Alger",
+                    "lat": "36.7525000",
+                    "lon": "3.0419700"
+                }, 
+                {
+                    "name": "Annaba",
+                    "lat": "36.9000000",
+                    "lon": "7.7666700"
+                }, 
+                {
+                    "name": "Oran",
+                    "lat": "35.6911100",
+                    "lon": "-0.6416700"
+                }
+            ],
+            "observation": ""
+        }, 
+        {
+            "shortCountryName": "Allemagne",
+            "longCountryName": "la République fédérale d’Allemagne",
+            "inhabitant": "Allemand, -e",
+            "capital": {
+                "name": "Berlin",
+                "lat": "52.5243700",
+                "lon": "13.4105300"
+            },
+            "diplomatic-or-consular-headquarters": [
+                {
+                "name": "Berlin",
+                "lat": "52.5243700",
+                "lon": "13.4105300"
+                },
+                {
+                    "name": "Düsseldorf",
+                    "lat": "51.2217200",
+                    "lon": "6.7761600"
+                },
+                {
+                    "name": "Francfort-sur-le-Main",
+                    "lat": "50.1155200",
+                    "lon": "8.6841700"
+                },
+                {
+                    "name": "Hambourg",
+                    "lat": "53.5753200",
+                    "lon": "10.0153400"
+                } ,
+                {
+                    "name": "Munich",
+                    "lat": "48.1374300",
+                    "lon": "11.5754900"
+                },
+                {
+                    "name": "Sarrebruck",
+                    "lat": "49.2354000",
+                    "lon": "6.9816500"
+                } ,
+                {
+                    "name": "Stuttgart",
+                    "lat": "48.7823200",
+                    "lon": "9.1770200"
+                }
+            ],
+            "observation": ""
+        } 
+        
+    ]
+}

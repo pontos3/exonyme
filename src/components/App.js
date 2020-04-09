@@ -12,10 +12,28 @@ const AppStyle = {
 
 class App extends React.Component {
 
-    render(){
-        const {title,version} = this.props;
 
+    state = {
+        countries : []
+    };
+
+    addCountry = (country) => {
+        country.id = new Date().getTime();
+
+        this.setState({countries: [...this.state.countries, country]});
+    }
+
+    render(){
+        const countries = this.state.countries;
         return (
+            <div style={AppStyle}>
+                <CountryPage 
+                    addCountry={this.addCountry}
+                    countries={countries}
+                >
+                </CountryPage>
+            </div>
+            /*
             <div style={AppStyle}>
                 <AppHeader title={title}></AppHeader>
                 <main>
@@ -23,6 +41,7 @@ class App extends React.Component {
                 </main>
                 <Footer version={version}></Footer>
             </div>
+            */
         );
     }
 } 

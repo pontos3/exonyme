@@ -17,6 +17,7 @@
 * (http://www.culture.fr/Ressources/FranceTerme/Toponymie) : un article sur la toponymie et l'exonymie
 * (https://nouvelle-techno.fr/actualites/pas-a-pas-inserer-une-carte-openstreetmap-sur-votre-site) : un tutoriel pour l'intégration de données d'openstreetmap
 * [Toponyme/exonyme français officiel (2019)](http://www.culture.gouv.fr/content/download/212209/2231710/version/1/file/Tononymie-JO_des_24_septembre_2008_et_21_avril_2019.pdf) : un lien vers le document listant les exonymes officiels frnaçais. La source date de 2019.
+* (https://bootsnipp.com/snippets/xrKXW) : A étudier pour les timeline
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

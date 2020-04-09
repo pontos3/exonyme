@@ -137,6 +137,39 @@
                 }
             ],
             "observation": ""
+        } , 
+        {
+            "shortCountryName": "Royaume-Uni",
+            "longCountryName": "le Royaume-Uni de Grande-Bretagne et d’Irlande du Nord",
+            "inhabitant": "Britannique",
+            "capital": {
+                "name": "Londres",
+                "lat": "51.5085300",
+                "lon": "-0.1257400"
+            },
+            "diplomatic-or-consular-headquarters": [
+                {
+                    "name": "Londres",
+                    "lat": "51.5085300",
+                    "lon": "-0.1257400"
+                },
+                {
+                "name": "Édimbourg",
+                "lat": "55.9520600",
+                "lon": "-3.1964800"
+                },
+                {
+                    "name": "Glasgow",
+                    "lat": "55.8651500",
+                    "lon": "-4.2576300"
+                },
+                {
+                    "name": "Gibraltar",
+                    "lat": "36.1447400",
+                    "lon": "-5.3525700"
+                }
+            ],
+            "observation": "1. La forme courante « Grande-Bretagne » est impropre pour désigner l’État.\n 2. Le siège du consulat général de France est, solidairement, à Édimbourg et Glasgow."
         } 
         
     ]

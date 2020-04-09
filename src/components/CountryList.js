@@ -3,8 +3,50 @@ import Table from 'react-bootstrap/Table';
 import Col from 'react-bootstrap/Col';
 import Pagination from 'react-bootstrap/Pagination';
 
-const CountryList = () => {
+const CountryList = (props) => {
     return (
+        <Table striped bordered hover>
+            <thead>
+                <tr>
+                    <th>countryId</th>
+                    <th>shortLabel</th>
+                    <th>longLabel</th>
+                    <th>listLabel</th>
+                    <th>iso2</th>
+                    <th>iso3</th>
+                    <th>longitude</th>
+                    <th>latitue</th>
+                    <th>observation</th>
+                </tr>
+            </thead>
+            <tbody>
+                { 
+                    props.countries.map((country) => {
+                         return (
+                            <tr key={country.id} >
+                                <td>{country.id}</td>
+                                <td>{country.shortLabel}</td>
+                                <td>{country.longLabel}</td>
+                                <td>{country.listLabel}</td>
+                                <td>{country.codeIso2}</td>
+                                <td>{country.codeIso3}</td>
+                                <td>{country.longitude}</td>
+                                <td>{country.latitude}</td>
+                                <td>{country.observation}</td>
+                            </tr>
+                        ); 
+                    }) 
+                }
+            </tbody>
+        </Table>
+     );
+
+     //        props.countries.map((country) => {
+     //   return country.shortLabel + 'tutu' 
+
+/*    return (
+
+
         <Col lg={12}>
             <Table striped bordered hover>
                 <thead>
@@ -49,7 +91,8 @@ const CountryList = () => {
                 <Pagination.Last />
             </Pagination>
         </Col>
-    );
+  
+    ); */
 }
 
 export default CountryList;

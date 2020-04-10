@@ -1,0 +1,185 @@
+[
+    {
+        "id": 0,
+        "shortLabel": "Afghanistan",
+        "longLabel": "la République islamique d’Afghanistan",
+        "listLabel": "Afghanistan",
+        "inhabitant": "Afghan, -e",
+        "capital": {
+            "name": "Kaboul",
+            "lat": "34.5281300",
+            "lon": "69.1723300"
+            
+        },
+        "diplomatic-or-consular-headquarters": [{
+                "name": "Kaboul",
+                "lat": "34.5281300",
+                "lon": "69.1723300"
+                
+            }
+        ]
+    }, 
+    {
+        "id": 1,
+        "shortLabel": "Afrique du Sud",
+        "longLabel": "la République d’Afrique du Sud",
+        "listLabel": "Afrique du Sud",
+        "inhabitant": "Sudafricain, -e ou Sud-Africain, -e",
+        "capital": {
+            "name": "Prétoria",
+            "lat": "-25.7448600",
+            "lon": "28.1878300"
+        },
+        "diplomatic-or-consular-headquarters": [
+            {
+                "name": "Prétoria",
+                "lat": "-25.7448600",
+                "lon": "28.1878300"
+            },
+            {
+                "name": "Le Cap",
+                "lat": "",
+                "lon": ""
+            },
+            {
+                "name": "Johannesbourg",
+                "lat": "",
+                "lon": ""
+            }
+        ],
+        "observation": "1. On trouve aussi les variantes « la République sud-africaine » (ONU) et « Pretoria ». 2. Prétoria est le siège du gouvernement ; Le Cap est le siège du parlement."
+    },
+    {
+        "id": 2,
+        "shortLabel": "Albanie",
+        "longLabel": "la République d’Albanie",
+        "listLabel": "Albanie",
+        "inhabitant": "Albanais, -e",
+        "capital": {
+            "name": "Tirana",
+            "lat": "41.3275000",
+            "lon": "19.8188900"
+        },
+        "diplomatic-or-consular-headquarters": [{
+            "name": "Tirana",
+            "lat": "41.3275000",
+            "lon": "19.8188900"
+        }],
+        "observation": ""
+    }, 
+    {
+        "id": 3,
+        "shortLabel": "Algérie",
+        "longLabel": "la République algérienne démocratique et populaire",
+        "listLabel": "Algérie",
+        "inhabitant": "Algérien, -ienne",
+        "capital": {
+            "name": "Alger",
+            "lat": "36.7525000",
+            "lon": "3.0419700"
+        },
+        "diplomatic-or-consular-headquarters": [
+            {
+                "name": "Alger",
+                "lat": "36.7525000",
+                "lon": "3.0419700"
+            }, 
+            {
+                "name": "Annaba",
+                "lat": "36.9000000",
+                "lon": "7.7666700"
+            }, 
+            {
+                "name": "Oran",
+                "lat": "35.6911100",
+                "lon": "-0.6416700"
+            }
+        ],
+        "observation": ""
+    }, 
+    {
+        "id": 4,
+        "shortLabel": "Allemagne",
+        "longLabel": "la République fédérale d’Allemagne",
+        "listLabel": "Allemagne",
+        "inhabitant": "Allemand, -e",
+        "capital": {
+            "name": "Berlin",
+            "lat": "52.5243700",
+            "lon": "13.4105300"
+        },
+        "diplomatic-or-consular-headquarters": [
+            {
+            "name": "Berlin",
+            "lat": "52.5243700",
+            "lon": "13.4105300"
+            },
+            {
+                "name": "Düsseldorf",
+                "lat": "51.2217200",
+                "lon": "6.7761600"
+            },
+            {
+                "name": "Francfort-sur-le-Main",
+                "lat": "50.1155200",
+                "lon": "8.6841700"
+            },
+            {
+                "name": "Hambourg",
+                "lat": "53.5753200",
+                "lon": "10.0153400"
+            } ,
+            {
+                "name": "Munich",
+                "lat": "48.1374300",
+                "lon": "11.5754900"
+            },
+            {
+                "name": "Sarrebruck",
+                "lat": "49.2354000",
+                "lon": "6.9816500"
+            } ,
+            {
+                "name": "Stuttgart",
+                "lat": "48.7823200",
+                "lon": "9.1770200"
+            }
+        ],
+        "observation": ""
+    } , 
+    {
+        "id": 5,
+        "shortLabel": "Royaume-Uni",
+        "longLabel": "le Royaume-Uni de Grande-Bretagne et d’Irlande du Nord",
+        "listLabel": "Royaume-Uni",
+        "inhabitant": "Britannique",
+        "capital": {
+            "name": "Londres",
+            "lat": "51.5085300",
+            "lon": "-0.1257400"
+        },
+        "diplomatic-or-consular-headquarters": [
+            {
+                "name": "Londres",
+                "lat": "51.5085300",
+                "lon": "-0.1257400"
+            },
+            {
+            "name": "Édimbourg",
+            "lat": "55.9520600",
+            "lon": "-3.1964800"
+            },
+            {
+                "name": "Glasgow",
+                "lat": "55.8651500",
+                "lon": "-4.2576300"
+            },
+            {
+                "name": "Gibraltar",
+                "lat": "36.1447400",
+                "lon": "-5.3525700"
+            }
+        ],
+        "observation": "1. La forme courante « Grande-Bretagne » est impropre pour désigner l’État.\n 2. Le siège du consulat général de France est, solidairement, à Édimbourg et Glasgow."
+    } 
+]

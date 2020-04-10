@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { FORM_MOD } from './AppConst';
-//import { FORM_MOD } from './AppConst'
+import { useLocation } from "react-router-dom";
 
 class CountryForm extends React.Component {
 
@@ -20,9 +20,11 @@ class CountryForm extends React.Component {
         observation: "",
     };
 
+    
     state = {
-        ...this.countryDefault,
-        validated: false
+        ...(this.props.country?this.props.country:this.countryDefault),
+        validated: false,
+        mod: this.props.history.location.state.mod
     };
 
     handleSubmit = (event) => {
@@ -36,12 +38,17 @@ class CountryForm extends React.Component {
         }
         else {
             this.props.addCountry(this.state)
-            this.setState( {...this.countryDefault, validate: false } )
-            console.log(this.state);
+            return this.props.history.push('/countries');
+            /* this.setState( {...this.countryDefault, validate: false } )
+            console.log(this.state); */
         }
     };
 
     render () {
+        console.log(this.props);
+
+        console.log(this.props.history.location.state.mod);
+
         return (
             <Form noValidate validated={this.state.validated} onSubmit={this.handleSubmit} disabled={true} >
                 <Form.Row>

@@ -16,15 +16,15 @@ class CountryPage extends React.Component {
             <Container fluid>
             <Row>
                 <Col lg={10}>
-                   <CountryForm formMode={FORM_MOD.UPDATE} addCountry={this.props.addCountry} >
+                   <CountryForm formMode={FORM_MOD.UPDATE} addCountry={this.props.addCountry} match={this.props.match} history={this.props.history} country={this.props.country} >
                    </CountryForm>
                 </Col>
             </Row>
             <div style={ {border: "solid 1px black", marginBottom: "20px", marginTop: "20px"} }></div>
-            <Row>
+           {/* <Row>
                 <CountryList countries={this.props.countries} >
                 </CountryList>
-            </Row>
+           </Row> */}
         </Container>
 /*            
             <Container fluid >

@@ -1,6 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import CountryPage from './CountryPage';
+import CountryList from './CountryList';
 import AppHeader from './AppHeader';
+import Contact from './Contact';
+import About from './About';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import CountryForm from './CountryForm'
 
 import "./App.css";
 
@@ -12,27 +18,47 @@ const AppStyle = {
 
 class App extends React.Component {
 
-
-    state = {
-        countries : []
-    };
-
-    addCountry = (country) => {
-        country.id = new Date().getTime();
-
-        this.setState({countries: [...this.state.countries, country]});
-    }
-
     render(){
-        const countries = this.state.countries;
         return (
             <div style={AppStyle}>
+                <Router>
+                    <AppHeader title={"test"}/>
+
+                    <Route exact path="/about" component={About} />
+                    <Route exact path="/contact" component={Contact} />
+                    <Route exact path="/countries" render={ () => ( <CountryList countries={this.props.countries}/> ) } />
+                    <Route
+                        path="/countries/:id" 
+                        render={ ({history, match}) => ( <CountryPage 
+                                history={history}
+                                match={match}
+                                addCountry={this.props.addCountry}
+                                country={this.props.countries[match.params.id]}
+                            /> 
+                             )
+                    } />
+                    <Route
+                        path="/countries/test" 
+                        render={ ({history, match}) => ( <CountryForm 
+                                history={history}
+                                match={match}
+                                addCountry={this.props.addCountry}
+                                country={this.props.countries[match.params.id]}
+                            /> 
+                             )
+                    } />
+                    <Footer/>
+                </Router>
+            </div>
+            /*
+            <div style={AppStyle}>
                 <CountryPage 
-                    addCountry={this.addCountry}
+                    addCountry={this.props.addCountry}
                     countries={countries}
                 >
                 </CountryPage>
             </div>
+            */
             /*
             <div style={AppStyle}>
                 <AppHeader title={title}></AppHeader>
@@ -46,4 +72,26 @@ class App extends React.Component {
     }
 } 
 
-export default App;
+
+const addCountryActionCreator = (country =>  {
+    return {
+        type: 'ADD_COUNTRY', 
+        payload: country
+    }
+})
+
+const mapStateToProps = (state) => {
+    return {
+        countries: state.countries
+    }
+}
+
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        addCountry: (country) => {
+            dispatch(addCountryActionCreator(country));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

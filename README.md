@@ -21,7 +21,7 @@
 * [Toponyme/exonyme français officiel (2019)](http://www.culture.gouv.fr/content/download/212209/2231710/version/1/file/Tononymie-JO_des_24_septembre_2008_et_21_avril_2019.pdf) : un lien vers le document listant les exonymes officiels français. La source date de 2019.
 * [tuiles openstreetmap en accès libre](https://wiki.openstreetmap.org/wiki/FR:Serveurs/tile.openstreetmap.fr) des tuiles en français.
 * [exemple de timeline](https://bootsnipp.com/snippets/xrKXW) : A étudier pour les timeline
-* [Ressource-Science-po](https://www.sciencespo.fr/cartographie/khartis/docs/les-fonds-de-carte-disponibles/index.html): 
+* [Ressource-Science-po](https://www.sciencespo.fr/cartographie/khartis/docs/les-fonds-de-carte-disponibles/index.html):
 * [Tuto TopoJson Leaflet](https://webkid.io/blog/maps-with-leaflet-and-topojson/)
 * [liste des pays du monde en sql](https://sql.sh/514-liste-pays-csv-xml)
 * [Liste des villes et coordonnées GPS](http://download.geonames.org/export/dump/)
@@ -38,23 +38,28 @@ In the project directory, you can run:
 
 #### `npm start`
 
-Runs the app in the development mode.<br />
+Runs the app in the development mode.
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
+The page will reload if you make edits.
+
 You will also see any lint errors in the console.
 
 #### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
+Launches the test runner in the interactive watch mode.
+
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 #### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
+Builds the app for production to the `build` folder.
+
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
+The build is minified and the filenames include the hashes.
+
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
@@ -77,27 +82,27 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 #### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+This section has moved here: <https://facebook.github.io/create-react-app/docs/code-splitting>
 
 #### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+This section has moved here: <https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size>
 
 #### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+This section has moved here: <https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app>
 
 #### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+This section has moved here: <https://facebook.github.io/create-react-app/docs/advanced-configuration>
 
 #### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+This section has moved here: <https://facebook.github.io/create-react-app/docs/deployment>
 
 #### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: <https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify>
 
 ### GIT
 

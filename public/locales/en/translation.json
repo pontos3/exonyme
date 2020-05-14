@@ -1,0 +1,39 @@
+{
+    "navbar": {
+      "zones": "zones",
+      "countries": "countries",
+      "towns": "towns",
+      "locations": "locations",
+      "contact": "contact",
+      "about": "about"
+    },
+    "contact": {
+      "title": "contact us",
+      "mail": "mail address"
+    },
+    "country": {
+      "list": {
+        "id":"id",
+        "shortLabel": "usual name",
+        "longLabel": "official name",
+        "listLabel": "list name",
+        "iso2": "iso2",
+        "iso3": "iso3",
+        "longitude": "longitude",
+        "latitude": "latitude",
+        "observation": "observations"
+      },
+      "form": {
+        "id":"id",
+        "shortLabel": "usual name",
+        "longLabel": "official name",
+        "listLabel": "list name",
+        "iso2": "iso2",
+        "iso3": "iso3",
+        "longitude": "longitude",
+        "latitude": "latitude",
+        "observation": "observations",
+        "inhabitant": "inhabitant"
+      }
+    }
+ }

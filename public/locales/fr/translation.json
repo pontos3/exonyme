@@ -1,0 +1,39 @@
+{
+    "navbar": {
+      "zones": "zones",
+      "countries": "pays",
+      "towns": "villes",
+      "locations": "implentations",
+      "contact": "contact",
+      "about": "à propos"
+    },
+    "contact": {
+      "title": "nous contacter",
+      "mail": "adresse Mail"
+    },
+    "country": {
+      "list": {
+        "id":"id",
+        "shortLabel": "nom usuel",
+        "longLabel": "nom officiel",
+        "listLabel": "nom de liste",
+        "iso2": "iso2",
+        "iso3": "iso3",
+        "longitude": "longitude",
+        "latitude": "latitude",
+        "observation": "observations"
+      },
+      "form": {
+        "id":"id",
+        "shortLabel": "nom usuel",
+        "longLabel": "nom officiel",
+        "listLabel": "nom de liste",
+        "iso2": "iso2",
+        "iso3": "iso3",
+        "longitude": "longitude",
+        "latitude": "latitude",
+        "observation": "observations",
+        "inhabitant": "inhabitant"
+      }
+    }
+ }

@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "code": "AFNO",
+        "label": "Afrique du nord/Moyen Orient",
+    },
+    {
+        "id": 1,
+        "code": "AM",
+        "label": "Amérique"
+    },
+    {
+        "id": 2,
+        "code": "AS",
+        "label": "Asie"
+    },
+    {
+        "id": 3,
+        "code": "AF",
+        "label": "Afrique"
+    },
+    {
+        "id": 4,
+        "code": "EU",
+        "label": "Europe"
+    },
+    {
+        "id": 5,
+        "code": "OC",
+        "label": "Océanie"
+    },
+    {
+        "id": 6,
+        "Code": "AN",
+        "label": "Antartctique"
+    }
+]

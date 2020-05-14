@@ -6,7 +6,7 @@ import AppHeader from './AppHeader';
 import Contact from './Contact';
 import About from './About';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import CountryForm from './CountryForm'
+//import CountryForm from './CountryForm'
 
 import "./App.css";
 
@@ -26,26 +26,17 @@ class App extends React.Component {
 
                     <Route exact path="/about" component={About} />
                     <Route exact path="/contact" component={Contact} />
-                    <Route exact path="/countries" render={ () => ( <CountryList countries={this.props.countries}/> ) } />
+                    <Route exact path="/countries" render={ () => ( <CountryList countries={this.props.countries} deleteCountry={this.props.deleteCountry} /> ) } />
                     <Route
                         path="/countries/:id" 
                         render={ ({history, match}) => ( <CountryPage 
                                 history={history}
                                 match={match}
                                 addCountry={this.props.addCountry}
+                                editCountry={this.props.editCountry}
                                 country={this.props.countries[match.params.id]}
                             /> 
-                             )
-                    } />
-                    <Route
-                        path="/countries/test" 
-                        render={ ({history, match}) => ( <CountryForm 
-                                history={history}
-                                match={match}
-                                addCountry={this.props.addCountry}
-                                country={this.props.countries[match.params.id]}
-                            /> 
-                             )
+                            )
                     } />
                     <Footer/>
                 </Router>
@@ -80,6 +71,20 @@ const addCountryActionCreator = (country =>  {
     }
 })
 
+const editCountryActionCreator = (country =>  {
+    return {
+        type: 'EDIT_COUNTRY', 
+        payload: country
+    }
+})
+
+const deleteCountryActionCreator = (countryId =>  {
+    return {
+        type: 'DELETE_COUNTRY', 
+        payload: countryId
+    }
+})
+
 const mapStateToProps = (state) => {
     return {
         countries: state.countries
@@ -90,6 +95,12 @@ const mapDispatchToProps = (dispatch) =>{
     return {
         addCountry: (country) => {
             dispatch(addCountryActionCreator(country));
+        },
+        editCountry: (country) => {
+            dispatch(editCountryActionCreator(country));
+        },
+        deleteCountry: (countryId) => {
+            dispatch(deleteCountryActionCreator(countryId));
         }
     }
 }

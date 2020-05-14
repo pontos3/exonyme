@@ -1,29 +1,32 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
-import Col from 'react-bootstrap/Col';
-import Pagination from 'react-bootstrap/Pagination';
+//import Col from 'react-bootstrap/Col';
+//import Pagination from 'react-bootstrap/Pagination';
+import { Link } from 'react-router-dom';
 import CountryItem from './CountryItem';
+import { useTranslation } from 'react-i18next';
 
 const CountryList = (props) => {
+    const { t } = useTranslation();
     return (
-        <Table striped bordered hover>
+        <Table striped bordered hover size="sm">
             <thead>
                 <tr>
-                    <th>Action</th>
-                    <th>countryId</th>
-                    <th>shortLabel</th>
-                    <th>longLabel</th>
-                    <th>listLabel</th>
-                    <th>iso2</th>
-                    <th>iso3</th>
-                    <th>longitude</th>
-                    <th>latitue</th>
-                    <th>observation</th>
+                    <th><Link to={{ pathname: `/countries/-1`, state: { mod: 'EDIT' } }} className='btn btn-primary float-left float-right' > + </Link> </th>
+                    <th>{t('country.list.id')}</th>
+                    <th>{t('country.list.shortLabel')}</th>
+                    <th>{t('country.list.longLabel')}</th>
+                    <th>{t('country.list.listLabel')}</th>
+                    <th>{t('country.list.iso2')}</th>
+                    <th>{t('country.list.iso3')}</th>
+                    <th>{t('country.list.longitude')}</th>
+                    <th>{t('country.list.latitude')}</th>
+                    <th>{t('country.list.observation')}</th>
                 </tr>
             </thead>
             <tbody>
                 { 
-                    props.countries.map((country) => { return (<CountryItem country={country} key={country.id} />); } ) 
+                    props.countries.map((country) => { return (<CountryItem country={country} key={country.id} deleteCountry={props.deleteCountry} />); } ) 
                 }
             </tbody>
         </Table>

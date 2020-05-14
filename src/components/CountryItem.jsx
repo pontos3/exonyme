@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 const CountryItem = (props)=>{
 
@@ -9,9 +10,8 @@ const CountryItem = (props)=>{
         <tr key={country.id} >
             <td>
                 <Link to={{ pathname: `/countries/${country.id}`, state: { mod: 'READ' } }} className='btn btn-outline-success m-1' > Read</Link> 
-                <Link to={{ pathname: `/countries/${country.id}`, state: { mod: 'EDIT' } }} className='btn btn-outline-primary m-1' > Edit</Link> 
-                <Link to={{ pathname: `/countries/${country.id}`, state: { mod: 'DELETE' } }} className='btn btn-outline-danger m-1' > Delete</Link> 
-                <Link to={{ pathname: `/countries/`, state: { mod: 'ADD' } }} className='btn btn-outline-primary m-1' > ADD</Link> 
+                {/*<Link to={{ pathname: `/countries/${country.id}`, state: { mod: 'DELETE' } }} className='btn btn-outline-danger m-1' > X </Link> */}
+                <Button variant="outline-danger" onClick={()=>{ props.deleteCountry(country.id) }}> X </Button>
             </td>
             <td>{country.id}</td>
             <td>{country.shortLabel}</td>

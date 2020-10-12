@@ -9,8 +9,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 //import CountryForm from './CountryForm'
 
 import "./App.css";
+import axios from 'axios';
 
-const Footer = ({version}) => (<footer>version: {version}</footer>);
+const Footer = ({ version }) => (<footer>version: {version}</footer>);
 
 const AppStyle = {
     paddingTop: '60px'
@@ -18,27 +19,36 @@ const AppStyle = {
 
 class App extends React.Component {
 
-    render(){
+    // componentDidMount(){
+    //     this.props.loadCountries();
+    // }
+
+    render() {
         return (
             <div style={AppStyle}>
                 <Router>
-                    <AppHeader title={"test"}/>
+                    <AppHeader title={"test"} loadCountries={this.props.loadCountries} />
 
                     <Route exact path="/about" component={About} />
                     <Route exact path="/contact" component={Contact} />
-                    <Route exact path="/countries" render={ () => ( <CountryList countries={this.props.countries} deleteCountry={this.props.deleteCountry} /> ) } />
+                    <Route 
+                        exact path="/countries" 
+                        render={()=>(<CountryList  deleteCountry={this.props.deleteCountry} countries={this.props.countries} 
+                            loadCountries={this.props.loadCountries}
+                        />) } 
+                    />
                     <Route
-                        path="/countries/:id" 
-                        render={ ({history, match}) => ( <CountryPage 
-                                history={history}
-                                match={match}
-                                addCountry={this.props.addCountry}
-                                editCountry={this.props.editCountry}
-                                country={this.props.countries[match.params.id]}
-                            /> 
-                            )
-                    } />
-                    <Footer/>
+                        path="/countries/:id"
+                        render={({ history, match }) => (<CountryPage
+                            history={history}
+                            match={match}
+                            addCountry={this.props.addCountry}
+                            editCountry={this.props.editCountry}
+                            country={this.props.countries.find(country => country.id === parseInt(match.params.id, 10)) }
+                        />
+                        )
+                        } />
+                    <Footer />
                 </Router>
             </div>
             /*
@@ -61,26 +71,32 @@ class App extends React.Component {
             */
         );
     }
-} 
+}
 
-
-const addCountryActionCreator = (country =>  {
+const loadCountriesActionCreator = ((countries) => {
     return {
-        type: 'ADD_COUNTRY', 
+        type: 'LIST_COUNTRIES',
+        payload: countries
+    }
+})
+
+const addCountryActionCreator = (country => {
+    return {
+        type: 'ADD_COUNTRY',
         payload: country
     }
 })
 
-const editCountryActionCreator = (country =>  {
+const editCountryActionCreator = (country => {
     return {
-        type: 'EDIT_COUNTRY', 
+        type: 'EDIT_COUNTRY',
         payload: country
     }
 })
 
-const deleteCountryActionCreator = (countryId =>  {
+const deleteCountryActionCreator = (countryId => {
     return {
-        type: 'DELETE_COUNTRY', 
+        type: 'DELETE_COUNTRY',
         payload: countryId
     }
 })
@@ -91,8 +107,27 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) =>{
+const mapDispatchToProps = (dispatch) => {
     return {
+        loadCountries: () => {
+            return axios('http://localhost:8081/countryhistory/search/findAllAtDate', {
+                method: 'GET',
+                mode: 'no-cors',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                },
+                params: {
+                    currentDate:'2020-04-27T00:00:01'
+                }
+            }).then((response) => {
+                console.log(response);
+                const countries = response.data._embedded.countryhistory
+                dispatch(loadCountriesActionCreator(countries));
+            }).catch((error) => {
+                console.log(error);
+            })
+        },
         addCountry: (country) => {
             dispatch(addCountryActionCreator(country));
         },

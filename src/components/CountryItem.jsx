@@ -14,11 +14,11 @@ const CountryItem = (props)=>{
                 <Button variant="outline-danger" onClick={()=>{ props.deleteCountry(country.id) }}> X </Button>
             </td>
             <td>{country.id}</td>
-            <td>{country.shortLabel}</td>
-            <td>{country.longLabel}</td>
-            <td>{country.listLabel}</td>
-            <td>{country.codeIso2}</td>
-            <td>{country.codeIso3}</td>
+            <td>{country.usualName}</td>
+            <td>{country.officialName}</td>
+            <td>{country.listName}</td>
+            <td>{country.iso2}</td>
+            <td>{country.iso3}</td>
             <td>{country.longitude}</td>
             <td>{country.latitude}</td>
             <td>{country.observation}</td>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 //import Col from 'react-bootstrap/Col';
 //import Pagination from 'react-bootstrap/Pagination';
@@ -6,8 +6,15 @@ import { Link } from 'react-router-dom';
 import CountryItem from './CountryItem';
 import { useTranslation } from 'react-i18next';
 
+
 const CountryList = (props) => {
     const { t } = useTranslation();
+
+    useEffect(()=>{
+        props.loadCountries();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <Table striped bordered hover size="sm">
             <thead>

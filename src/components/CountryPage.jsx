@@ -7,9 +7,43 @@ import CountryMap from './CountryMap'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import axios from 'axios'
 
 
 class CountryPage extends React.Component {
+
+    handleReloadCountry = (event) => {
+        // axios.get('http://localhost:8081/countries').then((response)=>{
+        //     if(response.status === 200) {
+        //         console.log(response.data);
+        //     }
+        //     else {
+        //         console.log(response.status);
+        //     }
+        // }).catch((error)=>{console.log(error)});
+
+        return axios('http://localhost:8081/countryhistory/search/findAllAtDate', {
+            method: 'GET',
+            mode: 'no-cors',
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Content-Type': 'application/json',
+            },
+            params: {
+                currentDate:'2020-04-27T00:00:01'
+            }
+          }).then((response)=>{
+                console.log(response);
+          }).catch((error)=>{
+              console.log(error);
+          })
+    }
+
+    constructor(props) {
+        super(props);
+        
+        this.handleReloadCountry();
+    }
 
     render() {
         return (

@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import { createStore, combineReducers} from 'redux';
 import { Provider } from 'react-redux';
-import jsonDataCountry from './data/countryListTest.json';
+//import jsonDataCountry from './data/countryListTest.json';
 import './i18n';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const countriesData = JSON.parse(JSON.stringify(jsonDataCountry));
+//const countriesData = JSON.parse(JSON.stringify(jsonDataCountry));
 
-const countriesReducer = (state = countriesData, action)=>{
+const countriesReducer = (state = [], action)=>{
     switch (action.type) {
+        case 'LIST_COUNTRIES':
+            const initialState = [...action.payload];
+            return initialState;
         case 'ADD_COUNTRY':
             action.payload.id = new Date().getTime();
             const newState = [...state, action.payload];

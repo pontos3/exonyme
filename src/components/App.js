@@ -29,8 +29,11 @@ class App extends React.Component {
                     <Route exact path="/contact" component={Contact} />
                     <Route 
                         exact path="/countries" 
-                        render={()=>(<CountryList  deleteCountry={this.props.deleteCountry} countries={this.props.countries} 
+                        render={()=>(<CountryList  
                             loadCountries={this.props.loadCountries}
+                            countries={this.props.countries}
+                            page={this.props.page}
+                            deleteCountry={this.props.deleteCountry}
                         />) } 
                     />
                     <Route
@@ -69,10 +72,10 @@ class App extends React.Component {
     }
 }
 
-const loadCountriesActionCreator = ((countries) => {
+const loadCountriesActionCreator = ((countries, page) => {
     return {
         type: 'LIST_COUNTRIES',
-        payload: countries
+        payload: { countries: countries, page: page }
     }
 })
 
@@ -99,13 +102,14 @@ const deleteCountryActionCreator = (countryId => {
 
 const mapStateToProps = (state) => {
     return {
-        countries: state.countries
+        countries: state.paginateCountries.countries,
+        page: state.paginateCountries.page
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        loadCountries: () => {
+        loadCountries: (page=0) => {
             return axios('http://localhost:8081/countryhistory/search/findAllAtDate', {
                 method: 'GET',
                 mode: 'no-cors',
@@ -114,12 +118,15 @@ const mapDispatchToProps = (dispatch) => {
                     'Content-Type': 'application/json',
                 },
                 params: {
-                    currentDate:'2020-04-27T00:00:01'
+                    currentDate:'2020-04-27T00:00:01',
+                    page: page
                 }
             }).then((response) => {
                 console.log(response);
-                const countries = response.data._embedded.countryhistory
-                dispatch(loadCountriesActionCreator(countries));
+                const countries = response.data._embedded.countryhistory;
+                const page = response.data.page
+
+                dispatch(loadCountriesActionCreator(countries, page));
             }).catch((error) => {
                 console.log(error);
             })

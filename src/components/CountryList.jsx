@@ -5,6 +5,7 @@ import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 import CountryItem from './CountryItem';
 import { useTranslation } from 'react-i18next';
+import { Pagination } from 'react-bootstrap';
 
 
 const CountryList = (props) => {
@@ -19,7 +20,22 @@ const CountryList = (props) => {
         <Table striped bordered hover size="sm">
             <thead>
                 <tr>
-                    <th><Link to={{ pathname: `/countries/-1`, state: { mod: 'EDIT' } }} className='btn btn-primary float-left float-right' > + </Link> </th>
+                    <th>
+                        <Pagination size={'sm'} >
+                            <Pagination.First onClick={()=>{props.loadCountries(0)}} />
+                            <Pagination.Prev onClick={()=>{props.loadCountries(props.page.number > 0 ? props.page.number - 1 : 0 )}} />
+                            <Pagination.Item>{0}</Pagination.Item>
+                            <Pagination.Ellipsis />
+                        
+                            <Pagination.Item active>{props.page.number}</Pagination.Item>
+                        
+                            <Pagination.Ellipsis />
+                            <Pagination.Item>{props.page.totalPages - 1}</Pagination.Item>
+                            <Pagination.Next onClick={()=>{props.loadCountries((props.page.number < props.page.totalPages -1 )? props.page.number + 1 : props.page.totalPages -1 )}}/>
+                            <Pagination.Last onClick={()=>{props.loadCountries(props.page.totalPages - 1)}} />
+                        </Pagination>
+                        <Link to={{ pathname: `/countries/-1`, state: { mod: 'EDIT' } }} className='btn btn-primary float-left float-right' > + </Link> 
+                    </th>
                     <th>{t('country.list.id')}</th>
                     <th>{t('country.list.shortLabel')}</th>
                     <th>{t('country.list.longLabel')}</th>

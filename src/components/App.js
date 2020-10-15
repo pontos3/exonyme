@@ -19,10 +19,6 @@ const AppStyle = {
 
 class App extends React.Component {
 
-    // componentDidMount(){
-    //     this.props.loadCountries();
-    // }
-
     render() {
         return (
             <div style={AppStyle}>
